@@ -1,0 +1,59 @@
+<head>
+  <title>게시판 입니다.</title>
+</head>
+<body>
+    <!--최 상단 nav 바-->
+    <div class="navbar navbar-inverse">
+        <div class="container-fluid container-size">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="localhost:3000">브로콜리 사이다</a>
+            </div>
+            <div class="navbar-collapse collapse navbar-inverse-collapse">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control col-md-8" placeholder="Search">
+                    </div>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="javascript:void(0)"></a></li>
+                    {{> loginTemplate}}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-size container-center">
+        <!--게시판 메뉴-->
+        <div class="panel panel-danger panel-size text-center" style="float: left;">
+            <div class="panel-heading">
+                <h3 class="panel-title">게시판</h3>
+            </div>
+            {{#each panels}}
+                {{> panelTemplate}}
+            {{/each}}
+        </div>
+        <div>
+            <!--게시글 목록-->
+            <div class="main-size main-background main-list-size">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>등록일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each lists}}
+                            {{> listTemplate}}
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <!--게시글-->
+            <div class="main-size main-background main-board-size">
+                컨텐츠!!!
+            </div>
+        </div>
+    </div>
+</body>
+
